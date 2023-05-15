@@ -42,8 +42,17 @@ echo "export PATH=\"/home/server/.local/bin:\$PATH\"" >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
 
+### Configure sudoers file
+Add the following lines to your `/etc/sudoers` file.
+```
+Defaults    env_keep += "PYENV_ROOT"
+#DEFAULTS    secure_path += "" 
+```
+
 ## Usage
 ```sh
 pyenv local 3.11.3
+pyenv which python | xargs poetry env use
+poetry install
 sudo -E poetry run start
 ```
