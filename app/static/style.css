@@ -90,17 +90,7 @@ blockquote p {
 	background-color: var(--color-bg);
 }
 
-/* == HEADER & NAV == */
-.social-link {
-    margin-right: 1em; 
-}
 
-.social-link svg {
-    width: 2em;
-    height: 2em;
-
-    fill: var(--color-bright);
-}
 
 /*div#meta-article { text-align: right; font-size: 0.85em; padding: 0; }
 article.ref { margin-bottom: 1em; padding-left: 8px; border-left: 3px solid var(--color-accent); }
@@ -137,3 +127,28 @@ footer {
     text-align: center; 
     display: block; 
 }
+
+/* TODO */ 
+#header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-bar-nav {
+    margin-left: auto;
+}
+
+/* == HEADER & NAV == */
+#header-bar-nav a.social-link {
+    margin-right: 1em; 
+    text-decoration: none;
+}
+
+#header-bar-nav a.social-link svg {
+    width: 1.5em;
+    height: 1.5em;
+
+    fill: var(--color-bright);
+}
+
