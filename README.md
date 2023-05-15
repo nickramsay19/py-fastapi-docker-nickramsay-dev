@@ -1,6 +1,6 @@
 # py-fastapi-react-nickramsay-dev
 
-## Usage
+## Installation 
 ### Install a C compiler
 Ensure you have a C compiler installed. `pyenv` requires a C compiler such as `gcc` or `clang`. 
 
@@ -29,7 +29,8 @@ source $SHELL_RC
 
 # install python3.11.3
 pyenv install 3.11.3
-pyenv global 3.11.3
+pyenv local 3.11.3
+poetry install
 ```
 
 ### Install poetry
@@ -39,4 +40,10 @@ curl -sSL https://install.python-poetry.org | python3 -
 # add poetry to path
 echo "export PATH=\"/home/server/.local/bin:\$PATH\"" >> $HOME/.bashrc
 source $HOME/.bashrc
+```
+
+## Usage
+```sh
+pyenv local 3.11.3
+sudo -E poetry run start
 ```
