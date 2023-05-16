@@ -1,4 +1,4 @@
-# py-fastapi-react-nickramsay-dev
+# py-fastapi-nickramsay-dev
 
 ## Installation 
 ### Install a C compiler
