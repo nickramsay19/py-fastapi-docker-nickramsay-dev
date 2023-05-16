@@ -12,7 +12,7 @@ body {
 	background-color: var(--color-bg0);
 	font-size: 0.9em;
 	color: var(--color-bright);
-	padding: 10px;
+    margin: 0px;
 }
 
 body, code, pre {
@@ -27,14 +27,25 @@ body, code, pre {
 div#content {
 	background-color: var(--color-bg1);
 	clear: both;
-	margin-top: 10px;
-	margin-bottom: 10px;
 	padding: 10px;
 	border-radius: 2px;
+
+    margin-top: 1em;
 }
 
 main {
     padding-top: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    div#content {
+        margin-top: 0px;
+    }
 }
 
 /* == LINKS == */
@@ -88,8 +99,6 @@ blockquote p {
 	background-color: var(--color-bg);
 }
 
-
-
 /*div#meta-article { text-align: right; font-size: 0.85em; padding: 0; }
 article.ref { margin-bottom: 1em; padding-left: 8px; border-left: 3px solid var(--color-accent); }
 article.ref:hover { border-left: 3px solid var(--color-bright); }
@@ -116,22 +125,20 @@ article.ref div.meta-index div { display: inline; }*/
     margin: 0;
 }
 
-article.post-banner span.post-tags a {
+.post-banner h3.post-title a, article.post-banner span.post-tags a {
     color: var(--color-accent);
 }
 
-/* TODO */ 
+/* == HEADER == */
 #header-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 #header-bar-nav {
     margin-left: auto;
 }
 
-/* == HEADER & NAV == */
 #header-bar-nav a.social-link {
     margin-right: 1em; 
     text-decoration: none;
@@ -144,6 +151,41 @@ article.post-banner span.post-tags a {
     fill: var(--color-bright);
 }
 
+#header p a {
+    color: var(--color-accent);
+}
+
+@media only screen and (max-width: 600px) {
+
+    #linkedin-social-link {
+        display: none;
+    }
+
+    #header-bar-title {
+        font-size: 0.7em;
+
+        letter-spacing: -0.5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #header-bar-nav nav {
+        display: flex;
+    }
+
+    #header-bar-nav a.social-link {
+        max-width: 1em;
+        margin: 0px;
+        margin-left: 0.4em; 
+    }
+
+    #header-bar-nav a.social-link svg {
+        width: 1em;
+        height: 1em;
+    }
+}
 /* == FOOTER == */
 #footer { 
     text-align: center; 
