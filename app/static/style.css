@@ -13,8 +13,6 @@ body {
 	font-size: 0.9em;
 	color: var(--color-bright);
 	padding: 10px;
-	/*max-width: 900px;
-	margin: auto;*/
 }
 
 body, code, pre {
@@ -22,7 +20,7 @@ body, code, pre {
 }
 
 .container {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 
@@ -122,12 +120,6 @@ article.post-banner span.post-tags a {
     color: var(--color-accent);
 }
 
-/* == FOOTER == */
-footer { 
-    text-align: center; 
-    display: block; 
-}
-
 /* TODO */ 
 #header-bar {
     display: flex;
@@ -152,3 +144,10 @@ footer {
     fill: var(--color-bright);
 }
 
+/* == FOOTER == */
+#footer { 
+    text-align: center; 
+    display: block; 
+
+    margin-top: 2em;
+}
