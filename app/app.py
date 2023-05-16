@@ -6,12 +6,12 @@ from fastapi.templating import Jinja2Templates
 from .database import db, Post
 
 # setup database connection
-'''with db:
-    db.create_tables([Post])
-
-    # create dummy post
-    dummy_post = Post(title="dummy title", body="dummy body")
-    dummy_post.save()'''
+# with db:
+#     db.create_tables([Post])
+#
+#     # create dummy post
+#     dummy_post = Post(title="dummy title", body="dummy body")
+#     dummy_post.save()
 
 # setup main router app
 app = FastAPI()
@@ -22,8 +22,12 @@ templates = Jinja2Templates(directory="app/templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def post(request: Request):
+    posts_query = Post.select(Post.id, Post.title) 
+    posts = [(p.id, p.title) for p in posts_query]
+
     return templates.TemplateResponse("index.html", {
                 "request": request,
+                "posts": posts,
     }) 
 
 @app.get("/{post_id}", response_class=HTMLResponse)
@@ -32,6 +36,3 @@ async def post(request: Request, post_id: str):
                 "request": request,
                 "post_id": post_id,
     }) 
-    
-
-
