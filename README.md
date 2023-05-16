@@ -46,8 +46,9 @@ source $HOME/.bashrc
 Add the following lines to your `/etc/sudoers` file.
 ```
 Defaults    env_keep += "PYENV_ROOT"
-#DEFAULTS    secure_path += "" 
 ```
+
+Then add `<HOME_DIR>/.local/bin:<HOME_DIR>/.local:<HOME_DIR>/.local/bin:<HOME_DIR>/.pyenv/bin` to `secure_paths` in the sudoers file. You must replace `<HOME_DIR>` with your explicit, physical home directory path; you cannot use environment variables such as `$HOME` in the `secure_paths` sudoers entry.
 
 ## Usage
 ```sh
