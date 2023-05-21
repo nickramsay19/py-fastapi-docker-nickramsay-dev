@@ -9,4 +9,4 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 
 DB="$DIR/db/posts.db"
 
-docker run -d -p $PORT:80 --rm -v $DB:/db --name $CONTAINER $IMAGE 
+docker run -d -p $PORT:80 --rm -v $DB:/posts.db --name $CONTAINER $IMAGE 

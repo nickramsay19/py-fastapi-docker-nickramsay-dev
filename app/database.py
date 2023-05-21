@@ -6,7 +6,7 @@ import os
 # setup database file
 APP_ROOT: str = os.path.dirname(os.path.abspath(__file__))
 #db = SqliteDatabase(f"{APP_ROOT}/db/posts.db", pragmas={'journal_mode': 'wal'})
-db = SqliteDatabase(f"./db/posts.db", pragmas={'journal_mode': 'wal'})
+db = SqliteDatabase(f"/posts.db", pragmas={'journal_mode': 'wal'})
 
 POST_MAX_TITLE_LEN = 100
 POST_MAX_BODY_LEN = 100_000 
