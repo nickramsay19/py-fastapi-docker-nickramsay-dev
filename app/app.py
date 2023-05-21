@@ -5,14 +5,6 @@ from fastapi.templating import Jinja2Templates
 
 from .database import db, Post
 
-# setup database connection
-# with db:
-#     db.create_tables([Post])
-#
-#     # create dummy post
-#     dummy_post = Post(title="dummy title", body="dummy body")
-#     dummy_post.save()
-
 # setup main router app
 app = FastAPI()
 
@@ -36,3 +28,5 @@ async def post(request: Request, post_id: str):
                 "request": request,
                 "post_id": post_id,
     }) 
+
+
