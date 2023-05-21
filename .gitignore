@@ -1,6 +1,7 @@
 __pycache__
 app/__pycache__
 tests/__pycache__
+db/posts.db
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,linux,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,linux,macos
