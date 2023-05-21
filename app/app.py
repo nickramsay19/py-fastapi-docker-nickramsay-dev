@@ -29,7 +29,10 @@ async def post(request: Request, post_id: str):
     try:
         post = Post.get_by_id(post_id) 
     except DoesNotExist as e:
-        return Response(f"couldnt find post with id {post_id}.")
+        return templates.TemplateResponse("unknown-post.html", {
+            "request": request,
+            "post_id": post_id,
+        })
 
     return templates.TemplateResponse("post.html", {
                 "request": request,
