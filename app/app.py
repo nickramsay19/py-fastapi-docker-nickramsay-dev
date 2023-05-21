@@ -1,7 +1,8 @@
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from peewee import DoesNotExist
 
 from .database import db, Post
 
@@ -24,9 +25,13 @@ async def post(request: Request):
 
 @app.get("/{post_id}", response_class=HTMLResponse)
 async def post(request: Request, post_id: str):
+  
+    try:
+        post = Post.get_by_id(post_id) 
+    except DoesNotExist as e:
+        return Response(f"couldnt find post with id {post_id}.")
+
     return templates.TemplateResponse("post.html", {
                 "request": request,
-                "post_id": post_id,
+                "post": post,
     }) 
-
-
