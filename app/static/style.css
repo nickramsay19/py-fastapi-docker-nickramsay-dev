@@ -48,8 +48,9 @@ main {
     }
 }
 
-a.title {
-    text-decoration: underline;
+a.link {
+    text-decoration: none;
+    color: var(--color-accent); 
 }
 
 h1 { 
